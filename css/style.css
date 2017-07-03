@@ -1,3 +1,5 @@
+/* general */
+
 * {
     margin: 0;
     padding: 0;
@@ -11,9 +13,39 @@
     --subtexto: #757575;
     --divisores: #bdbdbd;
     --accento: #ff9800;
-
-    font-family: 'Spectral', serif;
 }
+
+body {
+    font-family: 'Spectral', serif;
+    color: var(--texto-blanco);
+}
+
+.titulo-articulo {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.fondo-oscuro {
+    background-color: var(--principal-oscuro);
+    min-height: 100vh;
+}
+
+a {
+    color: var(--accento);
+    text-decoration: none;
+}
+
+.separacion-ul {
+    margin-left: 40px;
+    padding: 16px 0;
+}
+
+.articulo {
+    padding: 0 40px;
+    text-align: justify;
+}
+
+/* fin general */
 
 /* menu */
 
@@ -79,8 +111,6 @@ header > .foto-portada > h1 {
 
 .quiensoy {
     display: flex;
-    background-color: var(--principal-oscuro);
-    min-height: 100vh;
     align-items: center;
 }
 
@@ -90,11 +120,89 @@ figure {
 
 figure > img {
     border-radius: 500em;
-    width: 300px;
+    width: 250px;
     height: auto;
     margin: 50px 50px 0px 50px;
 }
 
+.quiensoy > article {
+    padding: 0 2em;
+    text-align: justify;
+}
+
 /* fin quien soy */
 
+/* estudios */
 
+.estudios {
+    background-color: var(--principal-claro);
+    color: var(--texto-negro);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.curso {
+    border: 2px solid var(--accento);
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 80%;
+    margin: 10px 20px;
+}
+
+.curso:nth-child(odd) {
+    background-color: var(--principal);
+}
+
+.curso:nth-child(even) {
+    background-color: white;
+}
+
+.curso img {
+    width: 100px;
+    height: 100px;
+    margin-left: 20px;
+}
+
+/* fin estudios */
+
+/* experiencia */
+
+.experiencia {
+    padding: 0 40px;
+}
+
+/*.experiencia > ul {
+    margin-left: 40px;
+}*/
+
+/* fin experiencia */
+
+/* sobre mi */
+
+.sobre-mi{
+    color: var(--texto-negro);
+}
+
+.sobre-mi > .container-sobre-mi {
+ display: flex;
+}
+
+
+
+/* fin sobre mi */
+
+/* footer */
+
+footer {
+    text-align: center;
+    font-size: 12px;
+    padding: 20px 0;
+    color: var(--texto-negro);
+}
+
+/* fin footer*/
