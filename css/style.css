@@ -53,6 +53,7 @@ a {
     position: fixed;
     top: 0px;
     width: 100%;
+    z-index: 1;
 }
 
 nav > .contenedor-menu {
@@ -73,6 +74,7 @@ nav > .contenedor-menu > li > a {
     text-decoration: none;
     color: var(--texto-blanco);
     display: block;
+    transition: all 0.3s linear;
 }
 
 nav > .contenedor-menu > li > a:hover {
@@ -101,8 +103,10 @@ header > .foto-portada {
 header > .foto-portada > h1 {
     color: var(--texto-blanco);
     padding: 15px;
+    border: 3px solid var(--accento);
     border-radius: 15px;
     background-color: rgba(0, 0, 0, 0.5);
+    animation: fondo-colorines 5s linear infinite, borde-redondeado 5s linear infinite;
 }
 
 /* fin header*/
@@ -149,7 +153,6 @@ figure > img {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     width: 80%;
     margin: 10px 20px;
 }
@@ -189,10 +192,23 @@ figure > img {
 }
 
 .sobre-mi > .container-sobre-mi {
- display: flex;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 40px;
 }
 
+.sobre-mi > .container-sobre-mi > .texto {
+    padding-right: 30px;
+    flex: 2;
+    min-width: 400px;
+} 
 
+.sobre-mi > .container-sobre-mi > .video-mio {
+    flex: 0;
+    border: 2px solid var(--accento);
+}
 
 /* fin sobre mi */
 
@@ -206,3 +222,34 @@ footer {
 }
 
 /* fin footer*/
+
+/* animaciones */
+
+@keyframes fondo-colorines {
+    0%   {background-color:red; left:0px; top:0px;}
+    25%  {background-color:yellow; left:200px; top:0px;}
+    50%  {background-color:blue; left:200px; top:200px;}
+    75%  {background-color:green; left:0px; top:200px;}
+    100% {background-color:red; left:0px; top:0px;}
+}
+
+@keyframes borde-redondeadoss {
+    0%   {border-radius: 50px 0 0 0;}
+    33.33%  {border-radius: 0 50px 0 0;}
+    66.66%  {border-radius: 0 0  50px 0;}
+    99.99% {border-radius: 0px 0 0 50px}
+    100%  {border-radius: 0px 0 0 0px;}
+}
+
+@keyframes borde-redondeado {
+    0%   {border-radius: 0px 0 0 0}
+    8%   {border-radius: 50px 0 0 0}
+    28%  {border-radius: 0 50px 0 0}
+    53%  {border-radius: 0 0 50px 0}
+    78%  {border-radius: 0 0 0 50px}
+    100% {border-radius: 0 0 0 0}
+}
+
+
+
+/* fin animaciones */
