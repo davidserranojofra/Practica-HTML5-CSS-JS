@@ -25,6 +25,7 @@
             <li class="item-menu"><a href="#experiencia">Experiencia</a></li>
             <li class="item-menu"><a href="#sobre-mi">Sobre mí</a></li>
             <li class="item-menu"><a href="#contacto">Contacto</a></li>
+            <li class="item-menu"><a href="#contacto">Tareas</a></li>
         </ul>
     </nav>
 
@@ -302,16 +303,30 @@
 
             <br>
 
-            <label for="conocido">Como me has encontrado:</label>
-            <input type="checkbox" name="conocido" value="Amigos"> Amigos
-            <input type="checkbox" name="conocido" value="Internet"> Internet
-            <input type="checkbox" name="conocido" value="Premsa"> Premsa
-            <input type="checkbox" name="conocido" value="Otros"> Otros
+            <label for="conocido">Como me has conocido:</label>
+            
+            <br>
+
+            <div class="ckbox" id="ckbox">
+                <input type="radio" name="conocido" value="Amigos"> Amigos
+                <input type="radio" name="conocido" value="Twitter"> Twitter
+                <input type="radio" name="conocido" value="Facebook"> Facebook
+                <input type="radio" name="conocido" value="Otros"> Otro
+            </div>
+
+            <div id="otro" class="otro"></div>
 
             <br>
 
-            <label for="comentario">Comentario:</label>
-            <textarea name="comentario" id="comentario" cols="30" rows="10" placeholder="Aquí tu comentario"></textarea>
+            <div class="container-textarea">
+
+                <label for="comentario">Comentario:</label>
+                <br>
+                <textarea name="comentario" id="comentario" class="comentario" placeholder="Aquí tu comentario"></textarea>
+                <br>
+                <small>Llevas escritas <span id="contadorPalabras"></span> palabras</small>
+
+            </div>
 
             <br>
 
@@ -326,4 +341,7 @@
     </footer>
 
 </body>
+
+    <script src="./js/javascript.js"></script>
+
 </html>
