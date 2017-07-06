@@ -13,27 +13,39 @@ creoInput.setAttribute("placeholder", "De que manera fue...");
 seleccionarInput.addEventListener("click", function (event) {
 
     if (seleccionarInput.children[3].checked === true) {
-
         otro.appendChild(creoInput);
 
     } else if (otro.children[0]) {
-
         otro.removeChild(creoInput); 
-
     }
 });
 
+
+
 //Textarea --> contador de 150 pabras
 
-var contador;
+var contador = 0;
 var textarea = document.getElementById("comentario");
 var insertarContador = document.getElementById("contadorPalabras");
 
 textarea.addEventListener("keypress", function(event) {
 
     contador = textarea.value.split(" ");
+    insertarContador.innerHTML = contador.length;
 
-    console.log(contador.length);
+    if (contador.length > 10) {
+        textarea.setAttribute("maxlength", textarea.value.length);
+
+    } else {
+        textarea.removeAttribute("maxlength");
+    }
 });
+
+
+// Smooth Scroll
+
+
+
+
 
 
