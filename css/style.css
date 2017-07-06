@@ -20,14 +20,22 @@ body {
     color: var(--texto-blanco);
 }
 
+section, footer {
+    padding: 60px;
+}
+
+header > h2 {
+    padding-bottom: 30px;
+}
+
+
+
 .titulo-articulo {
     text-align: center;
-    padding: 50px 0;
 }
 
 .fondo-oscuro {
     background-color: var(--principal-oscuro);
-    min-height: 100vh;
 }
 
 a {
@@ -113,6 +121,11 @@ header > .foto-portada > h1 {
 
 /* quien soy */
 
+/*.flex-titulo-contenido {
+    display: flex;
+    flex-direction: column;
+}*/
+
 .quiensoy {
     display: flex;
     align-items: center;
@@ -126,7 +139,6 @@ figure > img {
     border-radius: 500em;
     width: 250px;
     height: auto;
-    margin: 50px 50px 0px 50px;
     border: 3px solid var(--accento);
 }
 
@@ -150,12 +162,11 @@ figure > img {
 
 .curso {
     border: 2px solid var(--accento);
-    padding: 15px;
+    padding: 25px 35px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 80%;
-    margin: 10px 20px;
 }
 
 .curso:nth-child(odd) {
@@ -174,17 +185,11 @@ figure > img {
 
 /* fin estudios */
 
+
 /* experiencia */
 
-.experiencia {
-    padding: 0 40px;
-}
-
-/*.experiencia > ul {
-    margin-left: 40px;
-}*/
-
 /* fin experiencia */
+
 
 /* sobre mi */
 
@@ -219,14 +224,9 @@ form {
     text-align: center;
 }
 
-.container-textarea {
-
-}
-
 .container-textarea > .comentario {
     width: 300px;
     height: 100px;
-    padding: 10px;
     border: 3px solid var(--accento);
 }
 
