@@ -29,9 +29,9 @@
         </ul>
     </nav>
 
-    <section id="quiensoy" class="fondo-oscuro">
+    <section id="quiensoy" class="fondo-oscuro centrado-vertical">
 
-        <header>
+        <header class="anchototal">
                 <h2 class="titulo-articulo">Quien soy</h2>
         </header>
 
@@ -40,7 +40,7 @@
             <figure>
                 <img src="./img/david.jpg" alt="Foto David">
                 <figcaption>
-                    David Serrano
+                    David Serrano Jofra
                 </figcaption>
             </figure>
 
@@ -209,26 +209,32 @@
     
     </section>
 
-    <section id="experiencia" class="fondo-oscuro">
+    <section id="experiencia" class="fondo-oscuro centrado-vertical">
 
         <header>
             <h2 class="titulo-articulo">Experiencia laboral</h2>
         </header>
 
-        <p><em>Octubre 1999 - Actualidad:</em> Oficial 1ª en Jofra persianes S.C.P</p>
-        
-        <br>
-        
-        <p><em>Como desarrollador Web "Freelance":</em></p>
+        <div>
+            <p><em>Trabajo a jornada completa</em></p>
             
-        <ul class="separacion-ul">
-            <li><a href="https://fisiopuntura.cat">FisioPuntura</a> - WebApp con Polymer 1.0, Firebase 3 -- <strong>2017</strong></li>
-            <li><a href="http://pressandpullstudio.com/">Press and pull studio</a> - HTML5, CSS3, Javascript y SASS -- <strong>2016-2017</strong></li>
-            <li>Aplicación web de gestión de pagos a nivel local en FisioPuntura - HTML5, CSS3, Javascript y PHP con mysql -- <strong>2016</strong></li>
-            <li><a href="www.anyma-tienda.com">Anyma</a> - Wordpress -- <strong>2015</strong></li>
-            <li><a href="www.xocolatesgranollers.cat">Xocolates Granollers</a> - Wordpress -- <strong>2015</strong></li>
-            <li><a href="www.laquanya.es">La Quaranya</a> - Wordpres -- <strong>2014</strong></li>
-        </ul>
+            <ul class="separacion-ul">
+                <li>Octubre 1999 - Actualidad: Oficial 1ª en <a href="www.jofrapersiana.com">Jofra persianes S.C.P</a></li>
+            </ul>
+
+            <br>
+            
+            <p><em>Como desarrollador Web "Freelance":</em></p>
+                
+            <ul class="separacion-ul">
+                <li><a href="https://fisiopuntura.cat">FisioPuntura</a> - WebApp con Polymer 1.0, Firebase 3 -- <strong>2017</strong></li>
+                <li><a href="http://pressandpullstudio.com/">Press and pull studio</a> - HTML5, CSS3, Javascript y SASS -- <strong>2016-2017</strong></li>
+                <li>Aplicación web de gestión de pagos a nivel local en FisioPuntura - HTML5, CSS3, Javascript y PHP con mysql -- <strong>2016</strong></li>
+                <li><a href="www.anyma-tienda.com">Anyma</a> - Wordpress -- <strong>2015</strong></li>
+                <li><a href="www.xocolatesgranollers.cat">Xocolates Granollers</a> - Wordpress -- <strong>2015</strong></li>
+                <li><a href="www.laquanya.es">La Quaranya</a> - Wordpres -- <strong>2014</strong></li>
+            </ul>
+        </div>
 
     </section>
 
@@ -297,31 +303,46 @@
             <h2 class="titulo-articulo">Contacto</h2>
         </header>
 
-        <form action="" method="">
+        <form class="formulario" action="" method="">
 
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" placeholder="ej: Juan" required>
+            <div class="container-inputs">
+                <div class="izquierda-inputs">
+                    
 
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" placeholder="ej: hola@gmail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="ej: Juan" required>
 
-            <label for="telefono">Telefono:</label>
-            <input type="tel" id="telefono" name="telefono" placeholder="ej: 680973182" pattern="[0-9]{9}">
+                    
 
-            <br>
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" placeholder="ej: hola@gmail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
 
-            <label for="conocido">Como me has conocido:</label>
-            
-            <br>
+                    
 
-            <div class="ckbox" id="ckbox">
-                <input type="radio" name="conocido" value="Amigos"> Amigos
-                <input type="radio" name="conocido" value="Twitter"> Twitter
-                <input type="radio" name="conocido" value="Facebook"> Facebook
-                <input type="radio" name="conocido" value="Otros"> Otro
+                    <label for="telefono">Telefono:</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="ej: 680973182" pattern="[0-9]{9}">
+
+                </div>
+
+                <div class="derecha-inputs">
+
+                    <label for="conocido">Como me has conocido:</label>
+
+                    <div class="ckbox" id="ckbox">
+                        <input type="radio" name="conocido" value="Amigos"> Amigos
+                        <br>
+                        <input type="radio" name="conocido" value="Twitter"> Twitter
+                        <br>
+                        <input type="radio" name="conocido" value="Facebook"> Facebook
+                        <br>
+                        <input type="radio" name="conocido" value="Otros"> Otro
+                        
+                    </div>
+
+                    <div id="otro" class="otro"></div>
+
+                </div>
             </div>
-
-            <div id="otro" class="otro"></div>
 
             <br>
 
@@ -337,8 +358,10 @@
 
             <br>
 
-            <input type="submit" value="Enviar">
-            <input type="reset" value="Borrar">
+            <div class="botones-form">
+                <input type="submit" value="Enviar">
+                <input type="reset" value="Borrar">
+            </div>
 
         </form>
     </section>

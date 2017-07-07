@@ -11,8 +11,8 @@ creoInput.setAttribute("id", "inputotro");
 creoInput.setAttribute("placeholder", "De que manera fue...");
 
 seleccionarInput.addEventListener("click", function (event) {
-
-    if (seleccionarInput.children[3].checked === true) {
+    
+    if (seleccionarInput.children[6].checked === true) {
         otro.appendChild(creoInput);
 
     } else if (otro.children[0]) {
@@ -22,7 +22,7 @@ seleccionarInput.addEventListener("click", function (event) {
 
 
 
-//Textarea --> contador de 150 pabras
+// Textarea --> contador de 150 pabras
 
 var contador = 0;
 var textarea = document.getElementById("comentario");
@@ -33,7 +33,7 @@ textarea.addEventListener("keypress", function(event) {
     contador = textarea.value.split(" ");
     insertarContador.innerHTML = contador.length;
 
-    if (contador.length > 10) {
+    if (contador.length > 150) {
         textarea.setAttribute("maxlength", textarea.value.length);
 
     } else {
@@ -46,6 +46,12 @@ textarea.addEventListener("keypress", function(event) {
 
 
 
+// Efecto titulo
 
+// var titulo = document.getElementById("titulo-principal");
+
+// titulo.addEventListener('mousemove', function(event) {
+//     titulo.
+// });
 
 
