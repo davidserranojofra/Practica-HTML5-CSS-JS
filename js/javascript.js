@@ -44,14 +44,49 @@ textarea.addEventListener("keypress", function(event) {
 
 // Smooth Scroll
 
+var elementosMenu = document.getElementsByClassName("item-menu");
 
+for (var i = 0; i < elementosMenu.length; i++) {
+    
+    elementosMenu[i].addEventListener("click", function(event) {
+        
+        var seccionAIr = this.getElementsByTagName("a")[0].href.split("#");
 
-// Efecto titulo
+        if (seccionAIr.length === 2) {
+            event.preventDefault();
+            var irA = seccionAIr[seccionAIr.length - 1];
+            cogerIdParaScroll(irA);
+        }
+    });
+}
 
-// var titulo = document.getElementById("titulo-principal");
+function cogerIdParaScroll(id) {
+    
+    var elemento;
 
-// titulo.addEventListener('mousemove', function(event) {
-//     titulo.
-// });
+    if (id === "") {
+        elemento = document.getElementById("portada");
+    } else {
+        elemento = document.getElementById(id);
+    }
 
+    hacerScroll(elemento);
+} 
 
+function hacerScroll(elemento) {
+    
+    var salto = elemento.getBoundingClientRect().top * 0.3;
+    console.log(salto);
+
+    document.body.scrollTop += salto;
+
+    if (!elemento.ultimoSalto || elemento.ultimoSalto > Math.abs(salto)) {
+        elemento.ultimoSalto = Math.abs(salto);
+
+        setTimeout(function() {
+            hacerScroll(elemento);
+        }, 30);
+    } else {
+        elemento.ultimoSalto = null;
+    }
+}
