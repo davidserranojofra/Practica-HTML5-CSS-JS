@@ -41,6 +41,13 @@ header > h2 {
     background-color: var(--principal-oscuro);
 }
 
+.fondo-fijo {
+    width: 100%;
+    background-image: url(../img/reja1.jpg);
+    background-repeat: repeat;
+    background-attachment: fixed;
+}
+
 a {
     color: var(--accento);
     text-decoration: none;
@@ -90,6 +97,7 @@ nav > .contenedor-menu > li {
     flex-grow: 1;
     height: 50px;
     line-height: 50px;
+    color: var(--accento);
 }
 
 nav > .contenedor-menu > li > a {
@@ -99,12 +107,17 @@ nav > .contenedor-menu > li > a {
     transition: all 0.3s linear;
 }
 
-nav > .contenedor-menu > li:hover {
+nav > .contenedor-menu > li:hover, nav > .contenedor-menu > li:active {
     border: 2px solid var(--accento);
 }
 
 nav > .contenedor-menu > li > a:hover {
     color: var(--accento);
+}
+
+li:active {
+    color:var(--accento);
+    border: 2px solid var(--accento);
 }
 
 /* fin menu */
@@ -195,6 +208,18 @@ figure > img {
 }
 
 /* fin estudios */
+
+/* experiencia */
+
+.experiencia {
+    flex-wrap: wrap;
+}
+
+.experiencia > .container-experiencia {
+    min-width: 90%;
+}
+
+/* fin experiencia */
 
 /* sobre mi */
 
@@ -298,6 +323,15 @@ footer {
     background-color: var(--principal-claro);
 }
 
+footer a {
+    color: #ffffff;
+    transition: color 0.3s linear;
+}
+
+footer a:hover {
+    color: var(--accento);
+}
+
 /* fin footer*/
 
 /* animaciones */
@@ -322,3 +356,4 @@ footer {
 }
 
 /* fin animaciones */
+
