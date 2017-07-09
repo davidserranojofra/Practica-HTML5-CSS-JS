@@ -96,7 +96,7 @@ nav > .contenedor-menu > li {
     text-align: center;
     flex-grow: 1;
     height: 50px;
-    line-height: 50px;
+    line-height: 46px;
     color: #dc2c3c;
 }
 
@@ -107,17 +107,17 @@ nav > .contenedor-menu > li > a {
     transition: all 0.3s linear;
 }
 
-nav > .contenedor-menu > li:hover, nav > .contenedor-menu > li:active {
+nav > .contenedor-menu > li.active a {
+    border: 2px solid #dc2c3c;
+    color: #dc2c3c;
+}
+
+nav > .contenedor-menu > li:hover {
     border: 2px solid #dc2c3c;
 }
 
 nav > .contenedor-menu > li > a:hover {
     color: #dc2c3c;
-}
-
-li:active {
-    color:#dc2c3c;
-    border: 2px solid #dc2c3c;
 }
 
 /* fin menu */
