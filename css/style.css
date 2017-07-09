@@ -15,8 +15,13 @@
     --accento: #dc2c3c;*/
 }
 
+@font-face {
+    font-family: spectral;
+    src: url(../fonts/Spectral-Regular.ttf);
+}
+
 body {
-    font-family: 'Spectral', serif;
+    font-family: spectral;
     color: #ffffff;
 }
 
@@ -92,7 +97,7 @@ nav > .contenedor-menu {
 
 nav > .contenedor-menu > li {
     list-style-type: none;
-    background-color: #191919;
+    background-color: #000000;
     text-align: center;
     flex-grow: 1;
     height: 50px;
@@ -244,6 +249,9 @@ figure > img {
 
 .sobre-mi > .container-sobre-mi > .video-mio {
     flex: 0;
+}
+
+video {
     border: 2px solid #dc2c3c;
 }
 

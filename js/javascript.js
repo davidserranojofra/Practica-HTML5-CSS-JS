@@ -45,52 +45,57 @@ textarea.addEventListener("keypress", function(event) {
 
 var elementosMenu = document.getElementsByClassName("item-menu");
 
-for (var i = 0; i < elementosMenu.length; i++) {
+$('.contenedor-menu li a').click(function(){
+  var jumpId = $(this).attr('href');
+  $('body, html').animate({scrollTop: $(jumpId).offset().top - 10}, 450);
+});
+
+// for (var i = 0; i < elementosMenu.length; i++) {
     
-    elementosMenu[i].addEventListener("click", function(event) {
+//     elementosMenu[i].addEventListener("click", function(event) {
         
-        var seccionAIr = this.getElementsByTagName("a")[0].href.split("#");
+//         var seccionAIr = this.getElementsByTagName("a")[0].href.split("#");
 
-        borrarClaseActiva();
-        this.classList.add("active");
+//         borrarClaseActiva();
+//         this.classList.add("active");
         
 
-        if (seccionAIr.length === 2) {
-            event.preventDefault();
-            var irA = seccionAIr[seccionAIr.length - 1];
-            cogerIdParaScroll(irA);
-        }
-    });
-}
+//         if (seccionAIr.length === 2) {
+//             event.preventDefault();
+//             var irA = seccionAIr[seccionAIr.length - 1];
+//             cogerIdParaScroll(irA);
+//         }
+//     });
+// }
 
-function cogerIdParaScroll(id) {
+// function cogerIdParaScroll(id) {
     
-    var elemento;
+//     var elemento;
 
-    if (id === "") {
-        elemento = document.getElementById("portada");
-    } else {
-        elemento = document.getElementById(id);
-    }
+//     if (id === "") {
+//         elemento = document.getElementById("portada");
+//     } else {
+//         elemento = document.getElementById(id);
+//     }
 
-    hacerScroll(elemento);
-} 
+//     hacerScroll(elemento);
+// } 
 
-function hacerScroll(elemento) {
+// function hacerScroll(elemento) {
     
-    var salto = elemento.getBoundingClientRect().top * 0.3;
-    document.body.scrollTop += salto;
+//     var salto = elemento.getBoundingClientRect().top * 0.3;
+//     document.body.scrollTop += salto;
 
-    if (!elemento.ultimoSalto || elemento.ultimoSalto > Math.abs(salto)) {
-        elemento.ultimoSalto = Math.abs(salto);
+//     if (!elemento.ultimoSalto || elemento.ultimoSalto > Math.abs(salto)) {
+//         elemento.ultimoSalto = Math.abs(salto);
 
-        setTimeout(function() {
-            hacerScroll(elemento);
-        }, 30);
-    } else {
-        elemento.ultimoSalto = null;
-    }
-}
+//         setTimeout(function() {
+//             hacerScroll(elemento);
+//         }, 30);
+//     } else {
+//         elemento.ultimoSalto = null;
+//     }
+// }
 
 function borrarClaseActiva() {
     for (var i = 0; i < elementosMenu.length; i++ ) {
@@ -99,7 +104,7 @@ function borrarClaseActiva() {
 }
 
 
-//espia posicion para cambiar .active automaticamente
+// cambiar .active automatico
 
 var acumulaDesplazamiento = function(elemento) {
     var top = 0;
@@ -136,7 +141,7 @@ function cambiarMenu(event) {
         }
 
         borrarClaseActiva();
-        document.querySelector("a[href='#']").parentNode.classList.add("active");
+        document.querySelector("a[href$='portada']").parentNode.classList.add("active");
     } else if (desplazamientoPagina >= dondeEstaQuiensoy && desplazamientoPagina < dondeEstaEstudios) {
         if (!previo || previo !== 2) {
             previo = 2;
@@ -184,3 +189,14 @@ function cambiarMenu(event) {
         document.querySelector("a[href$='contacto']").parentNode.classList.add("active");
     } 
 }
+
+
+
+
+
+
+
+
+
+
+
