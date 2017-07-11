@@ -81,6 +81,7 @@ a {
 
 /* fin general */
 
+
 /* menu */
 
 .menu {
@@ -127,6 +128,7 @@ nav > .contenedor-menu > li > a:hover {
 
 /* fin menu */
 
+
 /* header */
 
 header > .foto-portada {
@@ -150,6 +152,7 @@ header > .foto-portada > h1 {
 }
 
 /* fin header*/
+
 
 /* quien soy */
 
@@ -175,6 +178,7 @@ figure > img {
 }
 
 /* fin quien soy */
+
 
 /* estudios */
 
@@ -214,6 +218,7 @@ figure > img {
 
 /* fin estudios */
 
+
 /* experiencia */
 
 .experiencia {
@@ -225,6 +230,7 @@ figure > img {
 }
 
 /* fin experiencia */
+
 
 /* sobre mi */
 
@@ -257,6 +263,7 @@ video {
 
 /* fin sobre mi */
 
+
 /* contacto */
 
 .formulario {
@@ -275,10 +282,10 @@ video {
     flex-direction: column;
 }
 
-.formulario > .container-inputs > .izquierda-inputs > input {
+.formulario > .container-inputs > .izquierda-inputs > input, .inserta-nota {
     border: 2px solid #dc2c3c;
     width: 180px;
-    height: 25px;
+    height: 30px;
     padding: 4px;
 
 }
@@ -310,17 +317,18 @@ video {
     text-align: center;
 }
 
-.botones-form > input {
+.botones-form > input, .boton {
     width: 70px;
     height: 30px;
     background-color: white;
     border: 2px solid #dc2c3c;
 }
 
-.botones-form > input:hover {
+.botones-form > input:hover, .boton:hover {
     background-color: #dc2c3c;;
 }
 /* fin contacto */
+
 
 /* footer */
 
@@ -341,6 +349,7 @@ footer a:hover {
 }
 
 /* fin footer*/
+
 
 /* animaciones */
 
@@ -365,3 +374,19 @@ footer a:hover {
 
 /* fin animaciones */
 
+/* tareas */
+
+.tareas {
+    width: 100%;
+    min-height: 91vh;
+}
+
+.container-tareas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.inserciones {
+    align-self: center;
+}

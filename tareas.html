@@ -4,13 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Tareas</title>
+    <!--<script src="./js/jquery-3.2.1.min.js"></script>-->
 </head>
-<body>
+<body class="fondo-oscuro">
 
-    <header>
-        <h1>Tareas</h1>
-    </header>
+    <nav class="menu">
+        <ul class="contenedor-menu">
+            <li class="item-menu"><a href="index.html#portada">Portada</a></li>
+            <li class="item-menu"><a href="index.html#quiensoy">Quien soy</a></li>
+            <li class="item-menu"><a href="index.html#estudios">Estudios</a></li>
+            <li class="item-menu"><a href="index.html#experiencia">Experiencia</a></li>
+            <li class="item-menu"><a href="index.html#sobre-mi">Sobre mí</a></li>
+            <li class="item-menu"><a href="index.html#contacto">Contacto</a></li>
+            <li class="item-menu active"><a href="">Tareas</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="tareas">
+            
+            <header>
+                <h2 class="titulo-articulo">Tareas</h1>
+            </header>
+
+            <div class="container-tareas">
+                <div class="inserciones">
+                    <input type="text" class="inserta-nota" id="insertaNota" placeholder="Añade tu nota">
+                    <button id="crearNota" class="boton">Crear nota</button>
+                </div>
+                <div id="mostrar-tarea" class="mostrar-tarea">
+                    <h3>Tareas pendientes</h3>
+                    <div>
+                        <ul class="pendientes" id="pendientes"></ul>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </section>
+    </main>
+
+     <footer>
+        <a href="mailto:davidserranojofra@gmail.com">© David Serrano Jofra 2017</a>
+    </footer>
     
 </body>
+
+    <script src="./js/ajax.js"></script>
+
 </html>

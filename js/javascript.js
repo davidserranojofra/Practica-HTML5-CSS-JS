@@ -43,59 +43,12 @@ textarea.addEventListener("keypress", function(event) {
 
 // Smooth Scroll
 
-var elementosMenu = document.getElementsByClassName("item-menu");
-
 $('.contenedor-menu li a').click(function(){
   var jumpId = $(this).attr('href');
-  $('body, html').animate({scrollTop: $(jumpId).offset().top - 10}, 450);
+  $('body, html').animate({scrollTop: $(jumpId).offset().top - 50}, 450);
 });
 
-// for (var i = 0; i < elementosMenu.length; i++) {
-    
-//     elementosMenu[i].addEventListener("click", function(event) {
-        
-//         var seccionAIr = this.getElementsByTagName("a")[0].href.split("#");
-
-//         borrarClaseActiva();
-//         this.classList.add("active");
-        
-
-//         if (seccionAIr.length === 2) {
-//             event.preventDefault();
-//             var irA = seccionAIr[seccionAIr.length - 1];
-//             cogerIdParaScroll(irA);
-//         }
-//     });
-// }
-
-// function cogerIdParaScroll(id) {
-    
-//     var elemento;
-
-//     if (id === "") {
-//         elemento = document.getElementById("portada");
-//     } else {
-//         elemento = document.getElementById(id);
-//     }
-
-//     hacerScroll(elemento);
-// } 
-
-// function hacerScroll(elemento) {
-    
-//     var salto = elemento.getBoundingClientRect().top * 0.3;
-//     document.body.scrollTop += salto;
-
-//     if (!elemento.ultimoSalto || elemento.ultimoSalto > Math.abs(salto)) {
-//         elemento.ultimoSalto = Math.abs(salto);
-
-//         setTimeout(function() {
-//             hacerScroll(elemento);
-//         }, 30);
-//     } else {
-//         elemento.ultimoSalto = null;
-//     }
-// }
+var elementosMenu = document.getElementsByClassName("item-menu");
 
 function borrarClaseActiva() {
     for (var i = 0; i < elementosMenu.length; i++ ) {
