@@ -1,3 +1,55 @@
+//// Validaciones formulario ////
+
+var formulario = document.getElementById("formulario");
+var emailInput = document.getElementById("email");
+var nombreInput = document.getElementById("nombre");
+var telefonoInput = document.getElementById("telefono");
+
+
+nombreInput.addEventListener("blur", comprovarNombre);
+emailInput.addEventListener("blur", comprovarMail);
+telefonoInput.addEventListener("blur", comprovarTelefono);
+
+
+
+function comprovarNombre() {
+    if(!(/[A-z]/).test(nombreInput.value)){
+        nombreInput.removeAttribute("class");
+        nombreInput.setAttribute("class", "input-error");
+    } else {
+        nombreInput.removeAttribute("class");
+        nombreInput.setAttribute("class", "input-ok");
+    }
+}
+
+    
+function comprovarMail() {
+    if (emailInput.value != "") {
+        if (!(/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/).test(emailInput.value)) {
+            alert("Introduzca un email valido");
+            emailInput.removeAttribute("class");
+            emailInput.setAttribute("class", "input-error");
+        } else {
+            emailInput.removeAttribute("class");
+            emailInput.setAttribute("class", "input-ok");
+        }
+    }
+}
+
+function comprovarTelefono() {
+    if (telefonoInput.value != "") {
+        if (!(/[0-9]{9}/).test(telefonoInput.value)) {
+            alert("Error teléfono invalido");
+            telefonoInput.removeAttribute("class");
+            telefonoInput.setAttribute("class", "input-error");
+        } else {
+            telefonoInput.removeAttribute("class");
+            telefonoInput.setAttribute("class", "input-ok");
+        }
+    }
+}
+
+
 // Input radio--> al seleccionar "Otro" se añade input
 
 var seleccionarInput = document.getElementById('ckbox');
@@ -44,8 +96,11 @@ textarea.addEventListener("keypress", function(event) {
 // Smooth Scroll
 
 $('.contenedor-menu li a').click(function(){
-  var jumpId = $(this).attr('href');
-  $('body, html').animate({scrollTop: $(jumpId).offset().top - 50}, 450);
+   
+    if (!elementosMenu.length - 1){
+        var jumpId = $(this).attr('href');
+        $('body, html').animate({scrollTop: $(jumpId).offset().top - 50}, 450);
+    }
 });
 
 var elementosMenu = document.getElementsByClassName("item-menu");
@@ -61,11 +116,9 @@ function borrarClaseActiva() {
 
 var acumulaDesplazamiento = function(elemento) {
     var top = 0;
-    console.log(elemento);
     do {
         top += elemento.offsetTop || 0;
         elemento = elemento.offsetParent;
-        console.log(elemento);
     } while (elemento);
 
     return top;
@@ -142,14 +195,4 @@ function cambiarMenu(event) {
         document.querySelector("a[href$='contacto']").parentNode.classList.add("active");
     } 
 }
-
-
-
-
-
-
-
-
-
-
 
