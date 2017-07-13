@@ -292,12 +292,6 @@ figure > img {
     min-width: 400px;
 } 
 
-.sobre-mi > .container-sobre-mi > .video-mio {
-    -webkit-box-flex: 0;
-        -ms-flex: 0;
-            flex: 0;
-}
-
 video {
     border: 2px solid #dc2c3c;
 }

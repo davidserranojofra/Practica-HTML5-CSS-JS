@@ -24,7 +24,7 @@ function comprovarNombre() {
 
     
 function comprovarMail() {
-    if (emailInput.value != "") {
+    if (emailInput.value !== "") {
         if (!(/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/).test(emailInput.value)) {
             alert("Introduzca un email valido");
             emailInput.removeAttribute("class");
@@ -37,14 +37,17 @@ function comprovarMail() {
 }
 
 function comprovarTelefono() {
-    if (telefonoInput.value != "") {
-        if (!(/[0-9]{9}/).test(telefonoInput.value)) {
-            alert("Error teléfono invalido");
-            telefonoInput.removeAttribute("class");
-            telefonoInput.setAttribute("class", "input-error");
+    if (telefonoInput.value !== "") {
+        
+        //Añado este if por que no me funciona bien el patron y si paso de 9 cifras lo da por bueno igual.
+        if (telefonoInput.value.length === 9) { 
+            if ((/[0-9]{9}/).test(telefonoInput.value)) {
+                telefonoInput.removeAttribute("class");
+                telefonoInput.setAttribute("class", "input-ok"); 
+            }
         } else {
             telefonoInput.removeAttribute("class");
-            telefonoInput.setAttribute("class", "input-ok");
+            telefonoInput.setAttribute("class", "input-error");
         }
     }
 }
