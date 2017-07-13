@@ -61,57 +61,16 @@ var escribirTarea = function() {
         etiquetaLi.setAttribute("class", "tarea-item");
 
 		for (var i = 0; i < tareas.length; i++) {
-            mostrarTarea.innerHTML += "<li class='separacion-tareas'>" + tareas[i].nombre + "<button class='boton-borrar' data-task-id='" + tareas[i].id + "'>Eliminar</button></li>";
+            mostrarTarea.innerHTML += "<li class='separacion-tareas'>" + tareas[i].nombre + "</li>";
         }
 	}
-
-}
-
-// borrar tareas
-
-var borrarTarea = function (id) {
-    var XHR = new XMLHttpRequest();
-    XHR.open("DELETE", "http://localhost:8000/api/tasks/" + id, true);
-    XHR.setRequestHeader("Content-Type", "application/json");
-
-    XHR.onreadystatechange = function () {
-        if (XHR.readyState === 4) {
-            console.log("tarea borrada");
-            leerTareas();
-        } else if (XHR.readyState === 4 && XHR.status === 404) {
-            alert("Esta página no existe");
-        }
-    }
-
-    XHR.send();
 }
 
 
 // eventos 
 
 botonCrearNota.addEventListener("click", function(event) {
-    crearNota(insertaNota.value);
-    
+    crearNota(insertaNota.value);  
 });
 
 leerTareas();
-
-// $(document).on('click', '.deleteTask', function(){
-// 	var id = $(this).data('taskId');
-// 	deleteTask(id);
-// });
-
-var botonBorrar = document.getElementsByClassName("boton-borrar");
-console.log(botonBorrar);
-// botonBorrar.addEventListener("click", function(event) {
-//     var id = this.data("taskId");
-//     console.log(id);
-//     console.log(botonBorrar);
-// });
-
-
-
-
-
-
-
