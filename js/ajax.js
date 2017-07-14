@@ -6,7 +6,6 @@ var botonCrearNota = document.getElementById("crearNota");
 var mostrarTarea = document.getElementById("mostrar-tarea");
 
 
-
 // crear tarea
 
 var crearNota = function (nombre) {
@@ -51,8 +50,8 @@ var leerTareas = function () {
 // mostrar tareas
 
 var escribirTarea = function() {
-    //  mostrarTarea.empty();
-    mostrarTarea.innerHTML = null;
+
+    mostrarTarea.innerHTML = "";
 
 	if (tareas.length == 0) {
         mostrarTarea.innerHTML = "<li class='separacion-tareas'>No hay tareas pendientes</li>";
