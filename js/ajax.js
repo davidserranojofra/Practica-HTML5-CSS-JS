@@ -55,11 +55,9 @@ var escribirTarea = function() {
     mostrarTarea.innerHTML = null;
 
 	if (tareas.length == 0) {
-		mostrarTarea.innerHTML = "<li class='separacion-tareas'>No hay tareas pendientes</li>";
+        mostrarTarea.innerHTML = "<li class='separacion-tareas'>No hay tareas pendientes</li>";
+        
 	} else {
-		var etiquetaLi = document.createElement("li");
-        etiquetaLi.setAttribute("class", "tarea-item");
-
 		for (var i = 0; i < tareas.length; i++) {
             mostrarTarea.innerHTML += "<li class='separacion-tareas'>" + tareas[i].nombre + "</li>";
         }

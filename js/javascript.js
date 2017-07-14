@@ -92,6 +92,7 @@ textarea.addEventListener("keypress", function(event) {
 
     } else {
         textarea.removeAttribute("maxlength");
+        
     }
 });
 
