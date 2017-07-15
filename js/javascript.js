@@ -199,4 +199,3 @@ function cambiarMenu(event) {
         document.querySelector("a[href$='contacto']").parentNode.classList.add("active");
     } 
 }
-

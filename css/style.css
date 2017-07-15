@@ -133,7 +133,7 @@ nav > .contenedor-menu > li > a:hover {
 /* fin menu */
 
 
-/* header */
+/* header portada*/
 
 header > .foto-portada {
     background-image: url(../img/keepcoding2017.jpg);
@@ -152,7 +152,7 @@ header > .foto-portada {
             align-items: center;
 }
 
-header > .foto-portada > h1 {
+header > .foto-portada > .titulo-inicial {
     padding: 15px;
     border: 3px solid #dc2c3c;
     border-radius: 15px;
@@ -160,6 +160,9 @@ header > .foto-portada > h1 {
     color: #dc2c3c;
     -webkit-animation: borde-redondeado 5s linear infinite;
             animation: borde-redondeado 5s linear infinite;
+
+    position: relative;
+    top: inherit;
 }
 
 /* fin header*/
