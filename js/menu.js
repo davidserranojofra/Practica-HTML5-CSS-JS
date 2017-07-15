@@ -4,7 +4,7 @@ $('.contenedor-menu li a').click(function(){
    
     if (!elementosMenu.length - 1){
         var jumpId = $(this).attr('href');
-        $('body, html').animate({scrollTop: $(jumpId).offset().top - 50}, 450);
+        $('body, html').animate({scrollTop: $(jumpId).offset().top - 52}, 450);
     }
 });
 
