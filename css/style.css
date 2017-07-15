@@ -11,6 +11,11 @@
     src: url(../fonts/Spectral-Regular.ttf);
 }
 
+@font-face {
+    font-family: IndieFlower;
+    src: url(../fonts/IndieFlower.ttf);
+}
+
 body {
     font-family: spectral;
     color: #ffffff;
@@ -479,6 +484,7 @@ footer a:hover {
     background-repeat: no-repeat;
     background-position: center;
     color: #000000;
+    font-family: IndieFlower;
 }
 
 .separacion-tareas {

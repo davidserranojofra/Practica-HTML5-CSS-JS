@@ -10,7 +10,6 @@ portada.addEventListener('mousemove', function (event) {
 
 
 portada.addEventListener('mouseleave', function(event) {
-    console.log("fuera");
     h1.style.top = "0px";
     h1.style.left = "0px";
 });
