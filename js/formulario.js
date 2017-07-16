@@ -6,51 +6,61 @@ var nombreInput = document.getElementById("nombre");
 var telefonoInput = document.getElementById("telefono");
 
 
-nombreInput.addEventListener("blur", comprovarNombre);
-emailInput.addEventListener("blur", comprovarMail);
-telefonoInput.addEventListener("blur", comprovarTelefono);
+// nombreInput.addEventListener("blur", comprovarNombre);
+// emailInput.addEventListener("blur", comprovarMail);
+// telefonoInput.addEventListener("blur", comprovarTelefono);
 
 
-
-function comprovarNombre() {
+formulario.addEventListener("submit", function(event) {
     if(!(/[A-z]/).test(nombreInput.value)){
         nombreInput.removeAttribute("class");
         nombreInput.setAttribute("class", "input-error");
-    } else {
-        nombreInput.removeAttribute("class");
-        nombreInput.setAttribute("class", "input-ok");
+        event.preventDefault();
+        return false;
     }
-}
-
     
-function comprovarMail() {
     if (emailInput.value !== "") {
         if (!(/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/).test(emailInput.value)) {
-            alert("Introduzca un email valido");
             emailInput.removeAttribute("class");
             emailInput.setAttribute("class", "input-error");
-        } else {
-            emailInput.removeAttribute("class");
-            emailInput.setAttribute("class", "input-ok");
+            event.preventDefault();
+            return false;
         }
     }
-}
 
-function comprovarTelefono() {
-    if (telefonoInput.value !== "") {
-        
-        //Añado este if por que no me funciona bien el patron y si paso de 9 cifras lo da por bueno igual.
-        if (telefonoInput.value.length === 9) { 
-            if ((/[0-9]{9}/).test(telefonoInput.value)) {
+    //Añado este if por que no me funciona bien el patron y si paso de 9 cifras lo da por bueno igual.
+  
+        if (telefonoInput.value !== "") {
+            if ((/[0-9]{9}/).test(telefonoInput.value) === false || telefonoInput.value.length !== 9) {
+                console.log(telefonoInput.value);
                 telefonoInput.removeAttribute("class");
-                telefonoInput.setAttribute("class", "input-ok"); 
+                telefonoInput.setAttribute("class", "input-error"); 
+                event.preventDefault();
+                return false;
             }
-        } else {
-            telefonoInput.removeAttribute("class");
-            telefonoInput.setAttribute("class", "input-error");
         }
-    }
-}
+
+
+
+});
+
+// function comprovarTelefono() {
+//     if (telefonoInput.value !== "") {
+        
+//         //Añado este if por que no me funciona bien el patron y si paso de 9 cifras lo da por bueno igual.
+//         if (!telefonoInput.value.length === 9) { 
+//             if ((/[0-9]{9}/).test(telefonoInput.value)) {
+//                 telefonoInput.removeAttribute("class");
+//                 telefonoInput.setAttribute("class", "input-ok"); 
+//             }
+//         } else {
+//             telefonoInput.removeAttribute("class");
+//             telefonoInput.setAttribute("class", "input-error");
+//             alert("t");
+//             return false;
+//         }
+//     }
+// }
 
 
 // Input radio--> al seleccionar "Otro" se añade input
