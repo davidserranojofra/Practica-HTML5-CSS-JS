@@ -4,6 +4,7 @@ var formulario = document.getElementById("formulario");
 var emailInput = document.getElementById("email");
 var nombreInput = document.getElementById("nombre");
 var telefonoInput = document.getElementById("telefono");
+var textarea = document.getElementById("comentario");
 
 
 // nombreInput.addEventListener("blur", comprovarNombre);
@@ -17,6 +18,9 @@ formulario.addEventListener("submit", function(event) {
         nombreInput.setAttribute("class", "input-error");
         event.preventDefault();
         return false;
+    } else {
+        nombreInput.removeAttribute("class");
+        nombreInput.setAttribute("class", "input-ok");
     }
     
     if (emailInput.value !== "") {
@@ -25,20 +29,38 @@ formulario.addEventListener("submit", function(event) {
             emailInput.setAttribute("class", "input-error");
             event.preventDefault();
             return false;
+        } else {
+            emailInput.removeAttribute("class");
+            emailInput.setAttribute("class", "input-ok");
+        }
+    }
+  
+    if (telefonoInput.value !== "") {
+        if ((/[0-9]{9}/).test(telefonoInput.value) === false || telefonoInput.value.length !== 9) {
+            telefonoInput.removeAttribute("class");
+            telefonoInput.setAttribute("class", "input-error"); 
+            event.preventDefault();
+            return false;
+        } else {
+            telefonoInput.removeAttribute("class");
+            telefonoInput.setAttribute("class", "input-ok");
         }
     }
 
-    //Añado este if por que no me funciona bien el patron y si paso de 9 cifras lo da por bueno igual.
-  
-        if (telefonoInput.value !== "") {
-            if ((/[0-9]{9}/).test(telefonoInput.value) === false || telefonoInput.value.length !== 9) {
-                console.log(telefonoInput.value);
-                telefonoInput.removeAttribute("class");
-                telefonoInput.setAttribute("class", "input-error"); 
+    if (textarea.value !== "") {
+            if (contador.length <= 151) {
+                textarea.removeAttribute("class");
+                textarea.setAttribute("class", "input-error"); 
                 event.preventDefault();
                 return false;
+            } else {
+                textarea.removeAttribute("class");
+                textarea.setAttribute("class", "input-ok");
             }
         }
+
+
+
 
 
 
