@@ -7,11 +7,6 @@ var telefonoInput = document.getElementById("telefono");
 var textarea = document.getElementById("comentario");
 
 
-// nombreInput.addEventListener("blur", comprovarNombre);
-// emailInput.addEventListener("blur", comprovarMail);
-// telefonoInput.addEventListener("blur", comprovarTelefono);
-
-
 formulario.addEventListener("submit", function(event) {
     if(!(/[A-z]/).test(nombreInput.value)){
         nombreInput.removeAttribute("class");
@@ -47,42 +42,8 @@ formulario.addEventListener("submit", function(event) {
         }
     }
 
-    if (textarea.value !== "") {
-            if (contador.length <= 151) {
-                textarea.removeAttribute("class");
-                textarea.setAttribute("class", "input-error"); 
-                event.preventDefault();
-                return false;
-            } else {
-                textarea.removeAttribute("class");
-                textarea.setAttribute("class", "input-ok");
-            }
-        }
-
-
-
-
-
-
+    alert("El formulario ha sido enviado");
 });
-
-// function comprovarTelefono() {
-//     if (telefonoInput.value !== "") {
-        
-//         //Añado este if por que no me funciona bien el patron y si paso de 9 cifras lo da por bueno igual.
-//         if (!telefonoInput.value.length === 9) { 
-//             if ((/[0-9]{9}/).test(telefonoInput.value)) {
-//                 telefonoInput.removeAttribute("class");
-//                 telefonoInput.setAttribute("class", "input-ok"); 
-//             }
-//         } else {
-//             telefonoInput.removeAttribute("class");
-//             telefonoInput.setAttribute("class", "input-error");
-//             alert("t");
-//             return false;
-//         }
-//     }
-// }
 
 
 // Input radio--> al seleccionar "Otro" se añade input
