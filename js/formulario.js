@@ -75,16 +75,21 @@ var contador = 0;
 var textarea = document.getElementById("comentario");
 var insertarContador = document.getElementById("contadorPalabras");
 
+var primerEspacio = /^ /;
+var ultimoEspacio = / $/;
+var variosEspacios = /[ ]+/g;
+
 textarea.addEventListener("keypress", function(event) {
 
-    contador = textarea.value.split(" ");
-    insertarContador.innerHTML = contador.length;
-
-    if (contador.length > 150) {
+    var remplazarEspacios = textarea.value.replace(/\s\s+/g, ' ').trim();
+    var arrayPalabras = remplazarEspacios.split(' ');
+    var contador = arrayPalabras.length;
+    insertarContador.innerHTML = contador;
+    
+    if (contador > 149) {
         textarea.setAttribute("maxlength", textarea.value.length);
 
     } else {
         textarea.removeAttribute("maxlength");
-        
     }
 });
